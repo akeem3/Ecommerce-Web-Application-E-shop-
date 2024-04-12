@@ -18,6 +18,7 @@ const ProductDetails: React.FC<productDetailsProps> = ({ product }) => {
         <h2 className="text-3xl font-medium text-slate-700">{product.name}</h2>
         <div>
           <Rating value={productRating} readOnly/>
+          <div>{product.reviews.length} reviews</div>
         </div>
       </div>
       
