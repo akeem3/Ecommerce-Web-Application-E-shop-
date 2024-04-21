@@ -2,9 +2,15 @@
 
 import { Rating } from "@mui/material";
 
+
 interface productDetailsProps {
   product: any;
 }
+
+const Horizontal = () => {
+  return <hr className="w-[30%] my-2"/>
+}
+
 //**issues here
 const ProductDetails: React.FC<productDetailsProps> = ({ product }) => {
   const productRating =
@@ -19,11 +25,27 @@ const ProductDetails: React.FC<productDetailsProps> = ({ product }) => {
         <h2 className="text-3xl font-medium text-slate-700">{product.name}</h2>
         <div className="flex items-center gap-2">
           <Rating value={productRating} readOnly/>
-          <div>{product.reviews.length} reviews</div>
+          <div>{product.reviews.length} reviews </div>
         </div>
+        <Horizontal/>
         <div className="text-justify">{product.description}</div>
+        <Horizontal/>
+        <div>
+          <span className="font-semibold">CATEGORY:</span> {product.category}
+        </div>  
+        <div>
+          <span className="font-semibold">BRAND:</span> {product.brand}
+        </div>
+        <div className={product.inStock ? "text-teal-400" : "text-rose-400"}>
+          {product.inStock ? 'In stock' : 'Out of stock'}
+        </div>
+        <Horizontal/>
+        <div>color</div>
+        <Horizontal/>
+        <div>quantity</div>
+        <Horizontal/>
+        <div>add to cart</div>
       </div>
-      
     </div>
   );
 };
