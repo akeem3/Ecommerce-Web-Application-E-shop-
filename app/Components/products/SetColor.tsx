@@ -15,7 +15,10 @@ const SetColor: React.FC<SetColorProps> = ({
     handColorSelect,
 }) => {
     return ( 
-        <div></div>
+        <div className="flex gap-4 items-center">
+            <span className="font-semibold">COLOR:</span>
+            
+        </div>
      );
 }
  
