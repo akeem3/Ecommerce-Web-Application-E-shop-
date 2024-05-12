@@ -50,7 +50,9 @@ const ProductDetails: React.FC<productDetailsProps> =
   price: product.price
   })
 
+  console.log(cartProduct);
 
+  
   const productRating =
   product.reviews.reduce((acc: number, item: any) => item.rating + acc, 0) /
   product.reviews.length;
@@ -59,8 +61,11 @@ const ProductDetails: React.FC<productDetailsProps> =
 
   const handleColorSelect = useCallback((value: 
     SelectedImgType) => {
-        
-    }, [cartProduct.selectedImg])
+        setCartProduct((prev) => {
+          return {...prev, selectedImg: value}
+        })
+    }, 
+    [cartProduct.selectedImg])
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
