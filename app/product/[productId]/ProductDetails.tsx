@@ -1,6 +1,7 @@
 "use client";
 
 import SetColor from "@/app/Components/products/SetColor";
+import SetQuantity from "@/app/Components/products/SetQuantity";
 import { Rating } from "@mui/material";
 import { useCallback, useState } from "react";
 
@@ -67,6 +68,10 @@ const ProductDetails: React.FC<productDetailsProps> =
     }, 
     [cartProduct.selectedImg])
 
+
+  const handleQtyIncrease = useCallback(() => {}, []);  
+  const handleQtyDecrease = useCallback(() => {}, []);  
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
       <div>Images</div>
@@ -97,7 +102,11 @@ const ProductDetails: React.FC<productDetailsProps> =
         handColorSelect={handleColorSelect}
         />
         <Horizontal/>
-        <div>quantity</div>
+        <SetQuantity
+        cartProduct={cartProduct}
+        handleQtyIncrease={handleQtyIncrease}
+        handleQtyDecrease={handleQtyDecrease}
+        /> 
         <Horizontal/>
         <div>add to cart</div>
       </div>
