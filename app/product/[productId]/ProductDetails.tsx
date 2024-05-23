@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/app/Components/Button";
 import SetColor from "@/app/Components/products/SetColor";
 import SetQuantity from "@/app/Components/products/SetQuantity";
 import { Rating } from "@mui/material";
@@ -35,7 +36,7 @@ const Horizontal = () => {
   return <hr className="w-[30%] my-2"/>
 }
 
-//**issues here
+
 const ProductDetails: React.FC<productDetailsProps> = 
 ({ product }) => {
 
@@ -121,7 +122,12 @@ const ProductDetails: React.FC<productDetailsProps> =
         handleQtyDecrease={handleQtyDecrease}
         /> 
         <Horizontal/>
-        <div>add to cart</div>
+        <div className="max-w-[300px]">
+          <Button
+          label="Add To Cart" 
+          onClick={() => {}}
+          />
+        </div>
       </div>
     </div>
   );
