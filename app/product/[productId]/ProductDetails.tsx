@@ -12,7 +12,6 @@ interface productDetailsProps {
 }
 
 
-
 export type CartProductType = {
   id: string,
   name: string,
